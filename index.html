@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>贪吃蛇 - 复古像素小游戏</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>贪吃蛇</h1>
+        <p>使用 ← ↑ → ↓ 或 WASD 控制方向，尝试刷新你的纪录吧！</p>
+      </header>
+
+      <section class="stats">
+        <div class="stat">
+          <span class="label">得分</span>
+          <span id="score" class="value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">最高分</span>
+          <span id="best-score" class="value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">速度</span>
+          <span id="speed" class="value">1x</span>
+        </div>
+      </section>
+
+      <div class="game-wrapper">
+        <canvas id="board" width="440" height="440" aria-label="贪吃蛇游戏画布" role="img"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <p id="overlay-message">按空格开始</p>
+          <button id="start-btn" class="primary">开始游戏</button>
+        </div>
+      </div>
+
+      <section class="controls">
+        <button id="pause-btn">暂停</button>
+        <button id="restart-btn">重新开始</button>
+      </section>
+
+      <section class="tips">
+        <h2>玩法提示</h2>
+        <ul>
+          <li>每吃到一个像素苹果，蛇身会变长，速度也会略微提升。</li>
+          <li>撞到墙体或自己的身体会失败，点击“重新开始”再次挑战。</li>
+          <li>最高分会自动保存在本地浏览器中。</li>
+        </ul>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
